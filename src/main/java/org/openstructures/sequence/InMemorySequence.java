@@ -1,15 +1,15 @@
-package com.openstructures.sequence;
+package org.openstructures.sequence;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.collect.Maps.newHashMap;
-import static com.openstructures.sequence.avltree.TreeUtils.getLeftmost;
-import static com.openstructures.sequence.avltree.TreeUtils.getRightmost;
-import static com.openstructures.sequence.avltree.TreeUtils.isLeftChild;
-import static com.openstructures.sequence.avltree.TreeUtils.isRightChild;
+import static org.openstructures.sequence.avltree.TreeUtils.getLeftmost;
+import static org.openstructures.sequence.avltree.TreeUtils.getRightmost;
+import static org.openstructures.sequence.avltree.TreeUtils.isLeftChild;
+import static org.openstructures.sequence.avltree.TreeUtils.isRightChild;
 
-import com.openstructures.sequence.avltree.AVLNode;
-import com.openstructures.sequence.avltree.AVLTree;
+import org.openstructures.sequence.avltree.AVLNode;
+import org.openstructures.sequence.avltree.AVLTree;
 import java.util.Comparator;
 import java.util.Map;
 

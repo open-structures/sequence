@@ -1,4 +1,4 @@
-package com.openstructures.sequence.avltree;
+package org.openstructures.sequence.avltree;
 
 import lombok.RequiredArgsConstructor;
 

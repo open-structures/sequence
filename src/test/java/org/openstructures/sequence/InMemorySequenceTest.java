@@ -1,4 +1,4 @@
-package com.openstructures.sequence;
+package org.openstructures.sequence;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -6,7 +6,6 @@ import org.junit.Test;
 import java.util.Comparator;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
 
 public class InMemorySequenceTest {
 
@@ -29,6 +28,27 @@ public class InMemorySequenceTest {
         assertThat(sequenceLink.getValue()).isEqualTo(1);
         assertThat(sequenceLink.getLeft()).isNull();
         assertThat(sequenceLink.getRight()).isNull();
+
+        // and when
+        sequenceLink = sequence.insert(3);
+
+        // then
+        assertThat(sequenceLink).isNotNull();
+        assertThat(sequenceLink.getValue()).isEqualTo(3);
+        assertThat(sequenceLink.getLeft()).isNotNull();
+        assertThat(sequenceLink.getLeft().getValue()).isEqualTo(1);
+        assertThat(sequenceLink.getRight()).isNull();
+
+        // and when
+        sequenceLink = sequence.insert(2);
+
+        // then
+        assertThat(sequenceLink).isNotNull();
+        assertThat(sequenceLink.getValue()).isEqualTo(2);
+        assertThat(sequenceLink.getLeft()).isNotNull();
+        assertThat(sequenceLink.getRight()).isNotNull();
+        assertThat(sequenceLink.getLeft().getValue()).isEqualTo(1);
+        assertThat(sequenceLink.getRight().getValue()).isEqualTo(3);
     }
 
     @Test
@@ -99,7 +119,6 @@ public class InMemorySequenceTest {
         assertThat(sequence.get(7).getLeft().getValue()).isEqualTo(5);
         assertThat(sequence.get(7).getRight()).isNull();
     }
-
 
     @Test
     public void shouldDeleteElementFromTheMiddle() {
@@ -244,7 +263,6 @@ public class InMemorySequenceTest {
         assertSequence(sequence, 9, 8, 10);
         assertSequence(sequence, 10, 9, null);
     }
-
 
     private InMemorySequence<Integer, Integer> newSequenceWith(int number) {
         InMemorySequence<Integer, Integer> sequence = new InMemorySequence<>(integerComparable);

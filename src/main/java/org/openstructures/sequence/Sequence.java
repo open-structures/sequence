@@ -1,4 +1,4 @@
-package com.openstructures.sequence;
+package org.openstructures.sequence;
 
 public interface Sequence<T extends C, C> {
 

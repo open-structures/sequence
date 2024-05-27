@@ -1,11 +1,11 @@
-package com.openstructures.sequence.avltree;
+package org.openstructures.sequence.avltree;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Comparator;
 
-import static com.openstructures.sequence.avltree.AVLTree.join;
+import static org.openstructures.sequence.avltree.AVLTree.join;
 import static java.lang.Math.max;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
